@@ -15,6 +15,9 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+//AppDbInitializer.seed(app);
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -33,5 +36,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();
