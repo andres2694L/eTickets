@@ -127,7 +127,7 @@ namespace eTickets.Data
                         }
                     });
                     context.SaveChanges();
-            }
+                }
                 //Movies
                 if (!context.Movies.Any())
                 {

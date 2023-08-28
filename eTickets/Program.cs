@@ -15,7 +15,7 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-//AppDbInitializer.seed(app);
+AppDbInitializer.seed(app);
 
 
 // Configure the HTTP request pipeline.
