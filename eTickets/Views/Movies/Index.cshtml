@@ -35,9 +35,13 @@
                                 <b>Status: </b>
                                 @if(DateTime.Now >= item.StartDate && DateTime.Now <= item.EndDate)
                                 {
-                                    <span class="badge bd-success text-white">AVAILABLE</span>
-                                }else{
-                                    <span class="badge bd-primary text-white">UPCOMING</span>
+                                    <span class="badge bg-success text-white">AVAILABLE</span>
+                                }else if(DateTime.Now > item.EndDate)
+                                {
+                                    <span class="badge bg-danger text-white">EXPIRED</span>
+                                }
+                                else{
+                                    <span class="badge bg-primary text-white">UPCOMING</span>
                                 }
                             </p>
                         </div>
@@ -46,7 +50,7 @@
                         <div class="card-footer">
                             <p class="card-text">
                                 <a class="btn btn-outline-primary float-right"><i class="bi bi-eye-fill">Show Details</i></a>
-                                <a class="btn btn-success text-white"><i class="bi bi-cart-plus">Add to Cart {$X.XX}</i></a>
+                                <a class="btn btn-success text-white"><i class="bi bi-cart-plus">Add to Cart (Price @item.Price.ToString("c")</i></a>
                             </p>
                         </div>
                     </div>
